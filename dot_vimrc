@@ -1,1 +1,2 @@
-syntax on
+syntax on # syntax highlighting
+scriptencoding utf-8 # encoding

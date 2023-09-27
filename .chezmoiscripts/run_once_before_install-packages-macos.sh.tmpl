@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# Install Homebrew if not already installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Homebrew packages
+brew bundle
+
+# Install fzf
+$(brew --prefix)/opt/fzf/install
+
+{{ end -}}
