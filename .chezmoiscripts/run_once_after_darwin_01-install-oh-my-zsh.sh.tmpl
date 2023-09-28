@@ -1,0 +1,20 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+if [[ $(command -v omz) ]]; then
+  echo "Oh-my-zsh is already installed. skipping"
+  exit 0
+else
+  # Install Oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [[ $(command -v fzf) ]]; then
+  echo "fzf is already installed. skipping"
+  exit 0
+else
+  # Install fzf
+  $(brew --prefix)/opt/fzf/install
+fi
+
+{{ end -}}

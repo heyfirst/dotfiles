@@ -1,16 +1,15 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-# Install Homebrew if not already installed
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [[ $(command -v brew) ]]; then
+    echo "Homebrew is already installed. skipping"
+else
+  # Install Homebrew if not already installed
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 
 # Install Homebrew packages
 brew bundle
-
-# Install Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# Install fzf
-$(brew --prefix)/opt/fzf/install
 
 {{ end -}}
