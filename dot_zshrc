@@ -17,7 +17,6 @@ plugins=(
   gh
   nvm
   tmux
-  terraform
   starship
   zoxide
 )
