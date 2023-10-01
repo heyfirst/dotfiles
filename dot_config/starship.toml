@@ -87,6 +87,9 @@ format = 'via [$symbol(\($switch_indicator$switch_name\) )]($style)'
 [opa]
 format = 'via [$symbol]($style)'
 
+[package]
+disabled = true
+
 [perl]
 format = 'via [$symbol]($style)'
 
@@ -100,7 +103,7 @@ format = 'via [$symbol$stack]($style)'
 format = 'via [$symbol]($style)'
 
 [python]
-format = 'via [$symbol]($style)'
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [raku]
 format = 'via [$symbol]($style)'
